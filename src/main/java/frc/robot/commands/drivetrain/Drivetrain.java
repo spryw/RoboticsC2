@@ -9,32 +9,29 @@ import frc.robot.Constants;
 
 
 public class Drivetrain extends SubsystemBase {
-    private final TalonFX leftFront = new TalonFX(Constants.DRIVE_LEFT_FRONT_ID);
-    private final TalonFX leftBack = new TalonFX(Constants.DRIVE_LEFT_BACK_ID);
     private final TalonFX rightFront = new TalonFX(Constants.DRIVE_RIGHT_FRONT_ID);
     private final TalonFX rightBack = new TalonFX(Constants.DRIVE_RIGHT_BACK_ID);
+    private final TalonFX leftFront = new TalonFX(Constants.DRIVE_LEFT_FRONT_ID);
+    private final TalonFX leftBack = new TalonFX(Constants.DRIVE_LEFT_BACK_ID);
 
     public Drivetrain() {
-        rightFront.setInverted(true);
-        rightBack.setInverted(true);
+        leftFront.setInverted(true);
+        leftBack.setInverted(true);
 
-        leftBack.follow(leftFront);
         rightBack.follow(rightFront);
+        leftBack.follow(leftFront);
 
-        leftBack.setNeutralMode(NeutralMode.Brake);
         rightBack.setNeutralMode(NeutralMode.Brake);
+        leftBack.setNeutralMode(NeutralMode.Brake);
     }
     
-    public void periodic() {
-        leftFront.set(ControlMode.PercentOutput, 0);
-        rightFront.set(ControlMode.PercentOutput, 0);
-    }
+    public void periodic() {}
 
     public void setLeftPercent(double percentOutput) {
-        rightFront.set(ControlMode.PercentOutput, percentOutput);
+        leftFront.set(ControlMode.PercentOutput, percentOutput);
     }
 
     public void setRightPercent(double percentOutput) {
-        leftFront.set(ControlMode.PercentOutput, percentOutput);
+        rightFront.set(ControlMode.PercentOutput, percentOutput);
     }
 }

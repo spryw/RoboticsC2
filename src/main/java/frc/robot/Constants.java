@@ -15,10 +15,10 @@ package frc.robot;
 public final class Constants {
     public static final int DRIVER_CONTROLLER_PORT = 0;
 
-    public static final int DRIVE_RIGHT_FRONT_ID = 1;
-    public static final int DRIVE_RIGHT_BACK_ID = 2;
-    public static final int DRIVE_LEFT_FRONT_ID = 3;
-    public static final int DRIVE_LEFT_BACK_ID = 4;
+    public static final int DRIVE_RIGHT_FRONT_ID = 3;
+    public static final int DRIVE_RIGHT_BACK_ID = 4;
+    public static final int DRIVE_LEFT_FRONT_ID = 1;
+    public static final int DRIVE_LEFT_BACK_ID = 2;
     public static final int INTAKE_ID = 5;
     public static final int INDEXER_BOTTOM_ID = 6;
     public static final int INDEXER_TOP_ID = 7;    
